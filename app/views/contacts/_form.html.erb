@@ -28,10 +28,7 @@
     <div class="field"
       <%= b.label :number %><br />
       <%= b.text_field :number %>
-    </div>
-
-    <div class="field">
-      <%= b.label :phone_type %><br />
+      <%= b.label :phone_type %>
       <%= b.select :phone_type, ["Home", "Office", "Mobile", "Fax", "Work"] %>
     </div>
   <% end %>
