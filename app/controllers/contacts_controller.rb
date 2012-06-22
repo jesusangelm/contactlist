@@ -52,6 +52,7 @@ class ContactsController < ApplicationController
         format.json { render json: @contact, status: :created, location: @contact }
       else
         format.html { render action: "new" }
+        3.times { @contact.phones.build }
         format.json { render json: @contact.errors, status: :unprocessable_entity }
       end
     end
