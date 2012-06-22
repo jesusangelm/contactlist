@@ -1,5 +1,7 @@
 Addresscontact::Application.routes.draw do
-  resources :contacts
+  resources :contacts do
+    resources :phones
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

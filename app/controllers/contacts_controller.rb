@@ -26,6 +26,8 @@ class ContactsController < ApplicationController
   def new
     @contact = Contact.new
 
+    3.times { @contact.phones.build }
+
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @contact }
@@ -35,6 +37,8 @@ class ContactsController < ApplicationController
   # GET /contacts/1/edit
   def edit
     @contact = Contact.find(params[:id])
+
+   3.times { @contact.phones.build }
   end
 
   # POST /contacts

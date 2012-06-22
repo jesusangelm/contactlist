@@ -4,9 +4,9 @@
       <h2><%= pluralize(@contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
 
       <ul>
-      <% @contact.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @contact.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -23,6 +23,18 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </div>
+
+  <%= f.fields_for :phones do |b| %>
+    <div class="field"
+      <%= b.label :number %><br />
+      <%= b.text_field :number %>
+    </div>
+
+    <div class="field">
+      <%= b.label :phone_type %><br />
+      <%= b.select :phone_type, ["Home", "Office", "Mobile", "Fax", "Work"] %>
+    </div>
+  <% end %>
 
   <div class="actions">
     <%= f.submit %>
