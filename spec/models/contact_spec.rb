@@ -2,13 +2,16 @@ require "spec_helper"
 
 describe Contact do
 
-  before { @contact = Contact.new(name: "contact test", address: "address test", email: "contact_email@test.com") }
+  before { @contact = Contact.new(name: "contact test", 
+                                  address: "address test", 
+                                  email: "contact_email@test.com") }
 
   subject { @contact }
 
   it { should respond_to(:name) }
   it { should respond_to(:address) }
   it { should respond_to(:email) }
+  it { should have_many(:phones) }
 
   it { should be_valid }
 
