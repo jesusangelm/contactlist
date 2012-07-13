@@ -24,12 +24,12 @@
     <%= f.text_field :email %>
   </div>
 
-  <%= f.fields_for :phones do |b| %>
+  <%= f.fields_for :phones do |phone| %>
     <div class="field"
-      <%= b.label :number %><br />
-      <%= b.text_field :number %>
-      <%= b.label :phone_type %>
-      <%= b.select :phone_type, ["Home", "Office", "Mobile", "Fax", "Work"] %>
+      <%= phone.label :number %><br />
+      <%= phone.text_field :number %>
+      <%= phone.label :phone_type %>
+      <%= phone.select :phone_type, Phone::TYPES %>
     </div>
   <% end %>
 
